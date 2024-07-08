@@ -20,6 +20,7 @@ export default function Create() {
     ctx.fillStyle = canvasColor;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     saveStateToHistory();
+    // eslint-disable-next-line
   }, [canvasColor, canvasHeight, canvasWidth]);
 
   const saveStateToHistory = () => {
@@ -161,6 +162,7 @@ export default function Create() {
       canvas.removeEventListener('touchmove', handleMouseMove);
       canvas.removeEventListener('touchend', stopDrawing);
     };
+    // eslint-disable-next-line
   }, [color, shape, shapeHeight, shapeWidth, strokeWidth, canvasColor]);
 
   const saveDrawing = () => {
@@ -306,15 +308,18 @@ export default function Create() {
         </button>
       </div>
 
+      {/* online  */}
       <div className="flex flex-row  mt-16  justify-around">
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <div className="w-60 rounded-lg border" style={{ height: '35vh' }}>
-            people online will be shown here
+            
           </div>
           <button className="self-center text-white mt-3 bg-indigo-500 active:bg-purple-950 hover:bg-purple-800 px-4 py-2 rounded-lg">
             Invite
           </button>
-        </div>
+        </div> */}
+
+        {/* canvas  */}
         <div className="border cursor-crosshair">
           <canvas
             ref={canvasRef}
@@ -323,6 +328,7 @@ export default function Create() {
           />
         </div>
 
+        {/* Tools  */}
         <div className="w-60 border flex flex-col" style={{ height: '30rem' }}>
           <div className={`flex flex-col px-7 pt-2 pb-3 ${shape === '' ? 'opacity-50' : ''}`}>
             <div className='self-center mb1'>
